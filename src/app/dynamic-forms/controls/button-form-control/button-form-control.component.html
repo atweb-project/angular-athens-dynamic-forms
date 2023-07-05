@@ -1,0 +1,10 @@
+<div class="example-button-row">
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!group.valid"
+  >
+    {{ config.label ? config.label : "My Button" }}
+  </button>
+</div>

@@ -1,0 +1,13 @@
+<form class="dynamic-form" [formGroup]="form" (submit)="handleSubmit($event)">
+  <ng-container
+    *ngFor="let field of config"
+    dynamicFormControl
+    [config]="field"
+    [group]="form"
+  >
+  </ng-container>
+</form>
+<div class="terminal" *ngIf="form.touched || form.dirty">
+  <pre>{{ form.value| json }}</pre>
+</div>
+

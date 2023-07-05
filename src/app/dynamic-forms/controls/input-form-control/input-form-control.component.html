@@ -1,0 +1,16 @@
+<mat-form-field [formGroup]="group">
+  <input
+    [type]="config.type"
+    matInput
+    placeholder="{{ config.placeholder ? config.placeholder : '' }}"
+    formControlName="{{config.name}}"
+    [value]="config.value"
+  />
+  <mat-error *ngIf="group.get(config.name)?.hasError('required')">
+    {{ config.label ? config.label : 'This field' }} is
+    <strong>required</strong>
+  </mat-error>
+  <mat-error *ngIf="group.get(config.name)?.hasError('email')">
+    Please add a <strong>valid email</strong>
+  </mat-error>
+</mat-form-field>
